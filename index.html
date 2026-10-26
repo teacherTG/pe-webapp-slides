@@ -305,16 +305,17 @@ button{font-family:inherit;cursor:pointer;border:none}
 .sc3 p{font-size:25px;line-height:1.6;opacity:.92}
 
 /* ---------- 제언 ---------- */
-.sug{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;flex:1;word-break:keep-all}
-.sug .face.front{background:#fff;color:var(--ink);border:3px solid var(--line);box-shadow:0 10px 24px rgba(0,0,0,.06);align-items:flex-start;justify-content:flex-start;padding:38px 36px}
-.sug .front .q{font-size:22px;font-weight:900;color:var(--pink);letter-spacing:2px;margin-bottom:6px}
-.sug .front .ic{font-size:72px;margin:6px 0 18px}
-.sug .front h3{font-size:36px;font-weight:900;color:var(--blue);line-height:1.35;margin-bottom:16px}
-.sug .front p{font-size:24px;line-height:1.6;color:var(--sub)}
-.sug .face.back{background:var(--blue);border:none;color:#fff;padding:38px 36px;justify-content:center}
-.sug .back h4{color:#bfdbfe;font-size:28px;margin-bottom:22px}
-.sug .back li{font-size:25px;line-height:1.5;margin:0 0 20px 26px;font-weight:500}
-.sug .back li b{color:var(--yellow)}
+.s-qs{padding:44px 90px 90px}
+.s-qs .htitle{font-size:42px;padding:14px 0;margin-bottom:18px}
+.sq{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr;gap:18px;flex:1;min-height:0;word-break:keep-all}
+.sqc{border:3px solid var(--line);border-radius:22px;padding:20px 28px;justify-content:center;background:#fff;box-shadow:0 10px 24px rgba(0,0,0,.06);display:flex;flex-direction:column}
+.sqc .top{display:flex;align-items:center;gap:14px;margin-bottom:8px}
+.sqc .ic{font-size:42px}
+.sqc .n{font-size:22px;font-weight:900;color:var(--pink);letter-spacing:2px}
+.sqc h3{font-size:29px;font-weight:900;color:var(--blue);line-height:1.3;margin-bottom:8px}
+.sqc p{font-size:20px;line-height:1.5;color:var(--sub)}
+.sq-close{margin-top:16px;text-align:center;font-size:30px;font-weight:800}
+.sq-close b{color:var(--pink)}
 
 /* ---------- thanks ---------- */
 .s-end{align-items:center;justify-content:center;text-align:center;background:linear-gradient(135deg,#1d4ed8,#ff2e7e)}
@@ -1034,44 +1035,17 @@ button{font-family:inherit;cursor:pointer;border:none}
 <!-- 07 -->
 <section class="slide s-sec" id="sec7"><span class="ball" style="right:230px;top:190px">💡</span><div class="num">07</div><div class="t">제언</div></section>
 
-<section class="slide">
-  <div class="crumb">제언</div>
-  <div class="htitle" style="margin-bottom:26px">함께 고민해 볼 질문 ①</div>
-  <div class="sug">
-    <div class="flip sug-c"><div class="inner">
-      <div class="face front"><div class="q">QUESTION</div><div class="ic">📺</div><h3>이동식 스마트 TV가<br>없다면?</h3><p>모든 학교에 대형 화면이 있는 건 아니에요. 장비가 없을 때는 어떻게 활용할까요?</p></div>
-      <div class="face back"><h4>이렇게 대체해 보세요</h4><ul><li><b>모둠별 태블릿·크롬북</b>으로 QR 접속해 팀마다 작은 전광판으로</li><li>교사 스마트폰 + <b>블루투스 스피커</b>로 시간·점수 음성 안내</li><li>체육관 <b>빔프로젝터</b>나 노트북을 거치대에 세워 활용</li><li>규칙·대진표는 <b>QR 포스터·출력물</b>로 벽에 게시</li></ul></div>
-    </div></div>
-    <div class="flip sug-c"><div class="inner">
-      <div class="face front"><div class="q">QUESTION</div><div class="ic">🎯</div><h3>웹앱이 수업의<br>목표를 가리지 않을까?</h3><p>화면을 보는 시간이 늘어나면 정작 '몸으로 배우는' 체육의 본질이 흐려질 수 있어요.</p></div>
-      <div class="face back"><h4>도구는 도구일 뿐</h4><ul><li>먼저 <b>성취기준과 수업 목표</b>를 정하고, 웹앱은 그 다음</li><li>사용 시점을 <b>수업 전·전환 시간·정리</b>로 한정</li><li><b>신체활동 시간</b>이 줄지 않았는지 늘 점검</li><li>웹앱 없이도 수업이 돌아가는지 <b>'빼기' 테스트</b></li></ul></div>
-    </div></div>
-    <div class="flip sug-c"><div class="inner">
-      <div class="face front"><div class="q">QUESTION</div><div class="ic">📝</div><h3>웹앱으로 평가까지<br>이어갈 수 있을까?</h3><p>규칙 퀴즈, 경기 기록, 전술 이해… 이미 쌓이는 데이터를 평가에 쓸 수는 없을까요?</p></div>
-      <div class="face back"><h4>기록을 평가의 근거로</h4><ul><li>규칙 퀴즈 결과를 <b>Apps Script로 시트에 저장</b> → 형성평가</li><li>득점·출전·역할 기록 누적 → <b>과정중심평가</b> 자료</li><li>전술보드로 설명하기 → <b>전술 이해 수행평가</b></li><li>단, 자동 기록은 <b>참고 자료</b>! 교사 관찰과 함께</li></ul></div>
-    </div></div>
+<section class="slide s-qs">
+  <div class="htitle">함께 고민해 볼 질문</div>
+  <div class="sq">
+    <div class="sqc frag"><div class="top"><span class="ic">📺</span><span class="n">Q1</span></div><h3>이동식 스마트 TV가<br>없는 학교라면?</h3><p>큰 화면 하나 없이도 이 웹앱들이 수업에 들어갈 수 있을까요?</p></div>
+    <div class="sqc frag"><div class="top"><span class="ic">🎯</span><span class="n">Q2</span></div><h3>웹앱이 수업의 주인공이<br>되고 있진 않나요?</h3><p>화면을 보는 시간만큼 몸을 움직이는 시간은 줄어듭니다.</p></div>
+    <div class="sqc frag"><div class="top"><span class="ic">📝</span><span class="n">Q3</span></div><h3>웹앱이 평가까지<br>이어질 수 있을까요?</h3><p>쌓이는 기록은 평가의 근거가 될까요, 또 하나의 업무가 될까요?</p></div>
+    <div class="sqc frag"><div class="top"><span class="ic">📶</span><span class="n">Q4</span></div><h3>수업 장소의 와이파이가<br>끊긴다면?</h3><p>수업 중 기기가 멈추는 순간, 수업의 흐름은 누가 지킬까요?</p></div>
+    <div class="sqc frag"><div class="top"><span class="ic">🔒</span><span class="n">Q5</span></div><h3>학생 정보는<br>안전한가요?</h3><p>이름과 기록이 시트와 AI에 쌓일 때, 책임은 어디까지일까요?</p></div>
+    <div class="sqc frag"><div class="top"><span class="ic">👥</span><span class="n">Q6</span></div><h3>같은 학년, 다른 수업이<br>되고 있진 않나요?</h3><p>손으로 기록하는 반과 웹앱을 쓰는 반. 학생들은 비교하고, 교사 사이엔 부담이 생깁니다.</p></div>
   </div>
-  <div class="hint" style="margin-top:14px">카드를 <b>클릭</b>하면 제언이 나와요</div>
-</section>
-
-<section class="slide">
-  <div class="crumb">제언</div>
-  <div class="htitle" style="margin-bottom:26px">함께 고민해 볼 질문 ②</div>
-  <div class="sug">
-    <div class="flip sug-c"><div class="inner">
-      <div class="face front"><div class="q">QUESTION</div><div class="ic">📶</div><h3>와이파이가 끊기거나<br>기기가 말썽이면?</h3><p>체육관·운동장은 네트워크가 불안정하고, 수업 중 오류는 흐름을 끊어요.</p></div>
-      <div class="face back"><h4>플랜 B를 준비해요</h4><ul><li>가능하면 <b>단일 HTML 파일</b>로 만들어 오프라인에서도 동작</li><li>수업 전 <b>미리 열어 두고</b> 충전·밝기·화면 꺼짐 확인</li><li>핵심 자료는 <b>종이 버전</b>도 함께 준비</li><li>저장 기능은 '저장됨' <b>확인 표시</b>를 꼭 넣기</li></ul></div>
-    </div></div>
-    <div class="flip sug-c"><div class="inner">
-      <div class="face front"><div class="q">QUESTION</div><div class="ic">🔒</div><h3>학생 정보,<br>안전하게 다루고 있나요?</h3><p>이름·기록·평가 정보가 웹앱과 시트에 쌓이면 개인정보 문제가 생길 수 있어요.</p></div>
-      <div class="face back"><h4>이것만은 지켜요</h4><ul><li>이름 대신 <b>번호·모둠명</b>으로 기록</li><li><b>학교 계정</b>으로 만들고 시트 공유 권한 최소화</li><li>AI에게 요청할 때 <b>실제 학생 정보는 입력 금지</b></li><li>학기 종료 후 <b>데이터 정리·삭제</b> 계획 세우기</li></ul></div>
-    </div></div>
-    <div class="flip sug-c"><div class="inner">
-      <div class="face front"><div class="q">QUESTION</div><div class="ic">🤝</div><h3>혼자 만들고<br>끝나지 않으려면?</h3><p>좋은 웹앱도 한 교실에만 머물면 아까워요. 어떻게 나누고 키워갈까요?</p></div>
-      <div class="face back"><h4>함께 만들고 나눠요</h4><ul><li>교과협의회·연수에서 <b>링크와 프롬프트</b> 공유</li><li>학생 의견을 받아 <b>함께 개선</b>하는 수업 문화</li><li><b>정보 교과와 융합</b>해 학생이 직접 만드는 웹앱</li><li>교사 커뮤니티에 <b>웹앱 라이브러리</b> 만들기</li></ul></div>
-    </div></div>
-  </div>
-  <div class="hint" style="margin-top:14px">카드를 <b>클릭</b>하면 제언이 나와요</div>
+  <div class="sq-close frag">정답은 없습니다. <b>선생님의 수업</b>에서 답을 찾아 주세요.</div>
 </section>
 
 <section class="slide s-end">
