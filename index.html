@@ -304,6 +304,19 @@ button{font-family:inherit;cursor:pointer;border:none}
 .sc3 h3{font-size:42px;font-weight:900;margin:16px 0 18px;line-height:1.3}
 .sc3 p{font-size:25px;line-height:1.6;opacity:.92}
 
+/* ---------- 제언 ---------- */
+.s-qs{padding:44px 90px 90px}
+.s-qs .htitle{font-size:42px;padding:14px 0;margin-bottom:18px}
+.sq{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr;gap:18px;flex:1;min-height:0;word-break:keep-all}
+.sqc{border:3px solid var(--line);border-radius:22px;padding:20px 28px;justify-content:center;background:#fff;box-shadow:0 10px 24px rgba(0,0,0,.06);display:flex;flex-direction:column}
+.sqc .top{display:flex;align-items:center;gap:14px;margin-bottom:8px}
+.sqc .ic{font-size:42px}
+.sqc .n{font-size:22px;font-weight:900;color:var(--pink);letter-spacing:2px}
+.sqc h3{font-size:29px;font-weight:900;color:var(--blue);line-height:1.3;margin-bottom:8px}
+.sqc p{font-size:20px;line-height:1.5;color:var(--sub)}
+.sq-close{margin-top:16px;text-align:center;font-size:30px;font-weight:800}
+.sq-close b{color:var(--pink)}
+
 /* ---------- thanks ---------- */
 .s-end{align-items:center;justify-content:center;text-align:center;background:linear-gradient(135deg,#1d4ed8,#ff2e7e)}
 .s-end h1{font-size:150px;font-weight:900;color:#fff;letter-spacing:-4px;cursor:pointer}
@@ -566,6 +579,7 @@ button{font-family:inherit;cursor:pointer;border:none}
     <button class="toc-item" data-go="sec4"><span class="n">04.</span>컨텐츠 체험</button>
     <button class="toc-item" data-go="sec5"><span class="n">05.</span>제작방법</button>
     <button class="toc-item" data-go="sec6"><span class="n">06.</span>정리</button>
+    <button class="toc-item" data-go="sec7"><span class="n">07.</span>제언</button>
   </div>
 </section>
 
@@ -1016,6 +1030,22 @@ button{font-family:inherit;cursor:pointer;border:none}
     <div class="sc3"><div class="k">02</div><h3>코딩 몰라도<br>말로 만든다</h3><p>화면은 제미나이 Canvas로,<br>'저장'이 필요하면<br>Apps Script로 연결해요.</p></div>
     <div class="sc3"><div class="k">03</div><h3>쓰면서<br>고친다</h3><p>수업에서 써 보고<br>학생 피드백을 반영해<br>계속 더 좋게 다듬어요.</p></div>
   </div>
+</section>
+
+<!-- 07 -->
+<section class="slide s-sec" id="sec7"><span class="ball" style="right:230px;top:190px">💡</span><div class="num">07</div><div class="t">제언</div></section>
+
+<section class="slide s-qs">
+  <div class="htitle">함께 고민해 볼 질문</div>
+  <div class="sq">
+    <div class="sqc frag"><div class="top"><span class="ic">📺</span><span class="n">Q1</span></div><h3>이동식 스마트 TV가<br>없는 학교라면?</h3><p>큰 화면 하나 없이도 이 웹앱들이 수업에 들어갈 수 있을까요?</p></div>
+    <div class="sqc frag"><div class="top"><span class="ic">🎯</span><span class="n">Q2</span></div><h3>웹앱이 수업의 주인공이<br>되고 있진 않나요?</h3><p>화면을 보는 시간만큼 몸을 움직이는 시간은 줄어듭니다.</p></div>
+    <div class="sqc frag"><div class="top"><span class="ic">📝</span><span class="n">Q3</span></div><h3>웹앱이 평가까지<br>이어질 수 있을까요?</h3><p>쌓이는 기록은 평가의 근거가 될까요, 또 하나의 업무가 될까요?</p></div>
+    <div class="sqc frag"><div class="top"><span class="ic">📶</span><span class="n">Q4</span></div><h3>수업 장소의 와이파이가<br>끊긴다면?</h3><p>수업 중 기기가 멈추는 순간, 수업의 흐름은 누가 지킬까요?</p></div>
+    <div class="sqc frag"><div class="top"><span class="ic">🔒</span><span class="n">Q5</span></div><h3>학생 정보는<br>안전한가요?</h3><p>이름과 기록이 시트와 AI에 쌓일 때, 책임은 어디까지일까요?</p></div>
+    <div class="sqc frag"><div class="top"><span class="ic">👥</span><span class="n">Q6</span></div><h3>같은 학년, 다른 수업이<br>되고 있진 않나요?</h3><p>손으로 기록하는 반과 웹앱을 쓰는 반. 학생들은 비교하고, 교사 사이엔 부담이 생깁니다.</p></div>
+  </div>
+  <div class="sq-close frag">정답은 없습니다. <b>선생님의 수업</b>에서 답을 찾아 주세요.</div>
 </section>
 
 <section class="slide s-end">
