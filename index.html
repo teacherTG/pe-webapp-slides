@@ -364,6 +364,27 @@ button{font-family:inherit;cursor:pointer;border:none}
 #lb .box .shot{width:auto}
 #lb .x{position:absolute;top:24px;right:30px;color:#fff;font-size:44px;background:none}
 
+/* ---------- 전체 슬라이드 개요 ---------- */
+#ov{position:absolute;inset:0;background:#0f172a;z-index:35;padding:36px 60px 40px;display:flex;flex-direction:column;opacity:0;visibility:hidden;transition:opacity .3s,visibility 0s .3s}
+#ov.on{opacity:1;visibility:visible;transition:opacity .3s}
+#ov .ov-h{display:flex;align-items:center;justify-content:space-between;color:#fff;margin-bottom:22px}
+#ov .ov-h h2{font-size:34px;font-weight:900}
+#ov .ov-h span{font-size:18px;color:#93c5fd;margin-left:16px;font-weight:500}
+#ov .x{color:#fff;font-size:40px;background:none;cursor:pointer}
+#ov .ov-g{flex:1;overflow-y:auto;display:grid;grid-template-columns:repeat(5,280px);justify-content:space-between;align-content:start;row-gap:24px;padding:4px 4px 70px}
+#ov .ov-t{cursor:pointer;color:#cbd5e1;font-size:16px;font-weight:600;transition:transform .2s}
+#ov .ov-t:hover{transform:translateY(-4px);color:#fff}
+#ov .ov-f{width:280px;height:157.5px;position:relative;overflow:hidden;border-radius:8px;background:#fff;border:3px solid transparent;margin-bottom:8px}
+#ov .ov-t:hover .ov-f{border-color:var(--blue2)}
+#ov .ov-t.cur .ov-f{border-color:var(--pink)}
+#ov .ov-t.cur{color:#fff}
+#ov .ov-s{position:absolute;left:0;top:0;width:1600px;height:900px;transform:scale(.175);transform-origin:0 0;pointer-events:none;color:var(--ink);text-align:left}
+#ov .ov-s .slide{opacity:1;visibility:visible;transform:none;transition:none}
+#ov .ov-s *{animation-duration:.001s!important;animation-delay:0s!important;animation-iteration-count:1!important;transition:none!important}
+#ov .ov-s .frag,#ov .ov-s .letters span{opacity:1;transform:none}
+#ov .ov-l{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#ov .ov-l b{color:var(--blue2);margin-right:6px}
+
 /* ---------- apps script ---------- */
 .s-sub{align-items:center;justify-content:center;background:linear-gradient(135deg,#0f9d58,#1d4ed8)}
 .s-sub .num{font-size:150px;font-weight:900;color:rgba(255,255,255,.2);letter-spacing:-6px;line-height:1}
@@ -1055,6 +1076,7 @@ button{font-family:inherit;cursor:pointer;border:none}
 </section>
 
 <div id="lb"><button class="x">✕</button><div class="box"></div></div>
+<div id="ov"><div class="ov-h"><h2>전체 슬라이드<span>클릭하면 바로 이동해요 · O 키로 열고 닫기</span></h2><button class="x" title="닫기 (Esc)">✕</button></div><div class="ov-g"></div></div>
 </div></div>
 
 <canvas id="fx"></canvas>
@@ -1062,6 +1084,7 @@ button{font-family:inherit;cursor:pointer;border:none}
   <button id="bPrev" title="이전 (←)">◀</button>
   <span id="count">1 / 1</span>
   <button id="bNext" title="다음 (→, Space)">▶</button>
+  <button id="bOv" title="전체 슬라이드 (O)">▦</button>
   <button id="bSnd" title="효과음 켜기/끄기">🔊</button>
   <button id="bFull" title="전체화면 (F)">⛶</button>
 </div>
@@ -1191,6 +1214,8 @@ document.getElementById('bSnd').onclick = e => { soundOn = !soundOn; e.currentTa
 function toggleFull(){ if(!document.fullscreenElement) document.documentElement.requestFullscreen?.(); else document.exitFullscreen?.(); }
 addEventListener('keydown', e => {
   if(e.target.tagName === 'SELECT') return;
+  if(ov.classList.contains('on')){ if(['Escape','o','O'].includes(e.key)) closeOv(); return; }
+  if(e.key === 'o' || e.key === 'O'){ openOv(); return; }
   if(['ArrowRight','PageDown',' ','Enter'].includes(e.key)){ e.preventDefault(); next(); }
   else if(['ArrowLeft','PageUp','Backspace'].includes(e.key)){ e.preventDefault(); prev(); }
   else if(e.key === 'Home') go(0);
@@ -1200,7 +1225,38 @@ addEventListener('keydown', e => {
 /* swipe */
 let sx = null;
 stage.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, {passive:true});
-stage.addEventListener('touchend', e => { if(sx===null) return; const dx = e.changedTouches[0].clientX - sx; if(Math.abs(dx) > 70 && !e.target.closest('.court')) (dx<0?next:prev)(); sx = null; });
+stage.addEventListener('touchend', e => { if(sx===null) return; const dx = e.changedTouches[0].clientX - sx; if(Math.abs(dx) > 70 && !e.target.closest('.court, #ov')) (dx<0?next:prev)(); sx = null; });
+
+/* ---------- 전체 슬라이드 개요 ---------- */
+const ov = document.getElementById('ov'), ovGrid = ov.querySelector('.ov-g');
+function slideTitle(s){
+  const el = s.querySelector('.htitle, .s-sec .t, .s-sub .t, h1, .left') || s.querySelector('.letters, .crumb');
+  return el ? (el.dataset.text || el.textContent).trim() : '';
+}
+function buildOv(){
+  slides.forEach((s,i) => {
+    const t = document.createElement('div'); t.className = 'ov-t';
+    const f = document.createElement('div'); f.className = 'ov-f';
+    const w = document.createElement('div'); w.className = 'ov-s';
+    const c = s.cloneNode(true);
+    c.removeAttribute('id'); c.querySelectorAll('[id]').forEach(n => n.removeAttribute('id'));
+    c.classList.remove('prev'); c.classList.add('active');
+    w.appendChild(c); f.appendChild(w); t.appendChild(f);
+    const l = document.createElement('div'); l.className = 'ov-l';
+    l.innerHTML = `<b>${i+1}</b>`; l.append(slideTitle(s)); t.appendChild(l);
+    t.onclick = () => { closeOv(); go(i); };
+    ovGrid.appendChild(t);
+  });
+}
+function openOv(){
+  if(!ovGrid.children.length) buildOv();
+  [...ovGrid.children].forEach((t,i) => t.classList.toggle('cur', i === cur));
+  ov.classList.add('on'); sfx.whoosh();
+  ovGrid.children[cur].scrollIntoView({block:'center'});
+}
+function closeOv(){ ov.classList.remove('on'); }
+document.getElementById('bOv').onclick = () => ov.classList.contains('on') ? closeOv() : openOv();
+ov.querySelector('.x').onclick = closeOv;
 
 document.querySelectorAll('[data-go]').forEach(b => b.onclick = () => go(slides.indexOf(document.getElementById(b.dataset.go))));
 
