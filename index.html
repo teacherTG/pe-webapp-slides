@@ -649,6 +649,42 @@ button{font-family:inherit;cursor:pointer;border:none}
 .lr.up{background:#fef9c3}
 .lg-r .btn{margin-top:auto;align-self:flex-end;font-size:18px;padding:8px 18px}
 .s-next{align-items:center;justify-content:center;text-align:center;background:linear-gradient(135deg,#111a2e,#1d4ed8)}
+
+/* ---------- 02 평가 · 03 업무 (김민혁) ---------- */
+.lead2{font-size:26px;color:var(--sub);font-weight:600;text-align:center;margin:-16px 0 26px}
+.duo{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:34px;min-height:0}
+.dc{background:#fff;border:3px solid var(--line);border-radius:22px;padding:36px 40px;display:flex;flex-direction:column;gap:14px;box-shadow:0 10px 24px rgba(0,0,0,.05)}
+.dc .ic{font-size:72px;line-height:1}
+.dc h3{font-size:40px;font-weight:900;color:var(--blue)}
+.dc p{font-size:27px;line-height:1.55;color:var(--sub)}
+.dc.sm{padding:44px 44px;flex-direction:row;align-items:center;gap:28px}
+.dc.sm .ic{font-size:80px}
+.dc.sm h3{font-size:40px;margin-bottom:8px}
+.dc.sm p{font-size:27px}
+.tq{display:flex;align-items:center;gap:12px;background:var(--sky2);border:2px dashed var(--sky);border-radius:16px;padding:12px 18px;font-size:24px;font-weight:700}
+.tq b{flex:none;background:var(--pink);color:#fff;font-size:18px;border-radius:20px;padding:4px 12px}
+.mk{background:var(--sky2);border-radius:18px;padding:26px 34px}
+.mk-h{font-size:22px;color:var(--sub);font-weight:700;margin-bottom:14px}
+.mk table{width:100%;border-collapse:collapse;font-size:27px;background:#fff;border-radius:12px;overflow:hidden}
+.mk th,.mk td{padding:16px 22px;text-align:left;border-bottom:2px solid var(--line)}
+.mk th{font-size:21px;color:var(--sub);font-weight:700;background:#f8fafc}
+.mk td{font-weight:700}
+.gsc{display:flex;gap:10px}
+.gsc button{width:58px;height:58px;border-radius:12px;border:2px solid var(--line);background:#fff;font-family:inherit;font-size:24px;font-weight:800;color:var(--ink);cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.gsc button:hover{border-color:var(--blue2)}
+.gsc button.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+.gtot{display:flex;justify-content:space-between;align-items:center;margin-top:18px;font-size:26px;font-weight:700;color:var(--sub)}
+.gtot b{font-size:46px;font-weight:900;color:var(--green)}
+.note2{font-size:19px;color:var(--muted);margin-top:12px;text-align:center}
+.bdg{display:inline-block;border-radius:30px;padding:4px 16px;font-size:21px;font-weight:800}
+.bdg.ok{background:#dcfce7;color:#15803d}.bdg.warn{background:#fef3c7;color:#b45309}.bdg.bad{background:#fee2e2;color:#b91c1c}
+.dform{display:flex;flex-direction:column;gap:14px}
+.dform select,.dform input{font-family:inherit;font-size:24px;padding:12px 14px;border-radius:12px;border:2px solid var(--line);color:var(--ink);font-weight:600;background:#fff}
+.dout{flex:1;background:#f8fafc;border:2px solid var(--line);border-radius:14px;padding:20px 24px;font-size:23px;line-height:1.7;white-space:pre-line;color:var(--ink)}
+.links2{display:flex;gap:18px;justify-content:center;margin-top:24px;flex-wrap:wrap}
+.links2 a{text-decoration:none;display:inline-block;font-size:26px;padding:16px 34px}
+.solve2{text-align:center;margin-top:20px}
+.solve2 b{color:#fff;background:var(--pink);border-radius:30px;padding:10px 26px;font-size:26px}
 </style>
 </head>
 <body>
@@ -851,8 +887,145 @@ button{font-family:inherit;cursor:pointer;border:none}
 <!-- ===================== 02 평가 (김민혁) ===================== -->
 <section class="slide s-sec" id="sec2"><span class="ball" style="left:220px;top:180px">📝</span><div class="num">02</div><div class="t">평가</div><div class="d">발표 · 김민혁 선생님</div></section>
 
+<section class="slide">
+  <div class="crumb">평가</div>
+  <div class="htitle">수행평가 채점, 앱으로 바로</div>
+  <div class="lead2">체육 수행평가 채점 앱 — 크로스핏 · 체조 수업</div>
+  <div class="duo">
+    <div class="dc"><div class="ic">🏋️</div><h3>크로스핏</h3><p>수업 중 학생별 수행을 보며<br>기준에 맞춰 바로 채점해요</p></div>
+    <div class="dc"><div class="ic">🤸</div><h3>체조</h3><p>동작별 평가 기준을 화면에서<br>확인하며 점수를 입력해요</p></div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="crumb">평가</div>
+  <div class="htitle">수행평가, 이런 점이 번거로웠어요 😓</div>
+  <div class="duo">
+    <div class="dc"><div class="ic">📋</div><h3>채점 기록의 부담</h3><p>수업 중 여러 학생을 보면서 종이에 기록하고, 나중에 점수로 다시 옮겨 입력해야 해요.</p>
+      <div class="tq"><b>선생님</b>이 점수 합산 다시 해야 하는데…</div><div class="tq"><b>선생님</b>기준이 헷갈려서 다시 확인했어요</div></div>
+    <div class="dc"><div class="ic">🧮</div><h3>환산·집계의 어려움</h3><p>동작별 점수를 합치고 등급으로 환산하는 과정에서 실수가 생기기 쉬워요.</p>
+      <div class="tq"><b>선생님</b>이 학생 점수 합계가 맞나요?</div></div>
+  </div>
+  <div class="idea frag">채점하는 순간, <b>바로 기록되고 자동 집계</b>된다면? ✨</div>
+</section>
+
+<section class="slide">
+  <div class="crumb">평가</div>
+  <div class="htitle">수행평가 채점 앱, 수업에서 이렇게 써요</div>
+  <div class="use3">
+    <div class="uc frag"><div class="ic">👤</div><div class="k">STEP 1</div><h3>학생 선택</h3><p>채점할 학생(모둠)을<br>눌러 선택</p></div>
+    <div class="arw frag">→</div>
+    <div class="uc frag"><div class="ic">✅</div><div class="k">STEP 2</div><h3>기준별 채점</h3><p>평가 기준마다<br>점수를 터치</p></div>
+    <div class="arw frag">→</div>
+    <div class="uc frag"><div class="ic">📊</div><div class="k">STEP 3</div><h3>자동 집계</h3><p>합계·환산 점수가<br>바로 계산</p></div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="crumb">평가</div>
+  <div class="htitle">직접 눌러 보세요 👆 <span style="font-size:26px;color:var(--sub);font-weight:700">(체험용 예시)</span></div>
+  <div class="mk">
+    <div class="mk-h">🤸 체조 수행평가 · 학생 A (가상 데이터)</div>
+    <table>
+      <tr><th>평가 기준</th><th>점수 (1~5)</th></tr>
+      <tr><td>동작의 정확성</td><td><div class="gsc" data-k="0"></div></td></tr>
+      <tr><td>유연성·균형</td><td><div class="gsc" data-k="1"></div></td></tr>
+      <tr><td>연결 동작의 완성도</td><td><div class="gsc" data-k="2"></div></td></tr>
+    </table>
+    <div class="gtot"><span>합계</span><b id="gradeTotal">0 / 15</b></div>
+  </div>
+  <div class="note2">※ 슬라이드 속 체험용 화면이며, 실제 앱은 다음 슬라이드의 링크에서 사용할 수 있어요.</div>
+</section>
+
+<section class="slide">
+  <div class="crumb">평가</div>
+  <div class="htitle">채점 · 기록 · 집계를 한 번에</div>
+  <div class="duo" style="flex:none;margin-top:auto">
+    <div class="dc sm"><div class="ic">🏋️</div><div><h3>크로스핏 수업</h3><p>수행 기준에 맞춘 채점</p></div></div>
+    <div class="dc sm"><div class="ic">🤸</div><div><h3>체조 수업</h3><p>동작별 기준 확인과 채점</p></div></div>
+  </div>
+  <div class="links2" style="margin-top:60px">
+    <a class="btn" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbwV1gZdDAgAkF8AStVG0xvnzpXU_vQbAIs6_75gXRxbDez7mVM5HnyzNcPYEap39K5xDg/exec">📝 체육 수행평가 채점 앱 열기</a>
+  </div>
+  <div class="solve2" style="margin-top:auto"><b>✔ 수행평가 채점 부담 해결</b></div>
+</section>
+
 <!-- ===================== 03 업무 (김민혁) ===================== -->
 <section class="slide s-sec" id="sec3"><span class="ball" style="right:220px;top:200px">🗂️</span><div class="num">03</div><div class="t">업무</div><div class="d">발표 · 김민혁 선생님</div></section>
+
+<section class="slide">
+  <div class="crumb">업무</div>
+  <div class="htitle">학생선수 출결, 한 곳에서 관리</div>
+  <div class="lead2">학생선수 출결 통합 관리 System</div>
+  <div class="duo">
+    <div class="dc"><div class="ic">📄</div><h3>기안문 자동생성기</h3><p>개인 학생선수 기안문을<br>정보만 고르면 자동으로 작성</p></div>
+    <div class="dc"><div class="ic">📊</div><h3>실시간 출결 DB</h3><p>스프레드시트에서 개인별<br>허용일수·누적일수를 실시간 확인</p></div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="crumb">업무</div>
+  <div class="htitle">학생선수 출결 업무, 이런 점이 어려웠어요 😓</div>
+  <div class="duo">
+    <div class="dc"><div class="ic">📄</div><h3>반복되는 기안문 작성</h3><p>대회·훈련 때마다 학생별로 기안문을 새로 작성하고 수정해야 해요.</p>
+      <div class="tq"><b>선생님</b>이 학생 기안문 또 올려야 해요</div></div>
+    <div class="dc"><div class="ic">🔎</div><h3>출결 현황 파악</h3><p>학생별 허용일수와 지금까지 쓴 누적일수를 한눈에 파악하기 어려워요.</p>
+      <div class="tq"><b>선생님</b>이 학생 허용일수 얼마나 남았죠?</div></div>
+  </div>
+  <div class="idea frag">기안문은 <b>자동으로</b>, 출결은 <b>한눈에!</b> ✨</div>
+</section>
+
+<section class="slide">
+  <div class="crumb">업무 · 해결 ①</div>
+  <div class="htitle">📄 개인 학생선수 기안문 자동생성기 <span style="font-size:26px;color:var(--sub);font-weight:700">(체험용 예시)</span></div>
+  <div class="duo" style="grid-template-columns:.8fr 1.2fr">
+    <div class="dc">
+      <div class="mk-h" style="margin:0">정보 선택 (가상 데이터)</div>
+      <div class="dform">
+        <select id="dStudent"><option>학생선수 A</option><option>학생선수 B</option><option>학생선수 C</option></select>
+        <select id="dType"><option>대회 참가</option><option>훈련 참가</option></select>
+        <input type="date" id="dDate" value="2026-11-28">
+        <button class="btn" id="dBtn">기안문 생성 ✨</button>
+      </div>
+    </div>
+    <div class="dc">
+      <div class="mk-h" style="margin:0">생성된 기안문 (예시)</div>
+      <div class="dout" id="dOut">정보를 고르고 [기안문 생성]을 눌러 보세요.</div>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="crumb">업무 · 해결 ②</div>
+  <div class="htitle">📊 허용일수 · 누적일수, 실시간 확인 <span style="font-size:26px;color:var(--sub);font-weight:700">(가상 데이터 예시)</span></div>
+  <div class="mk">
+    <table>
+      <tr><th>학생선수</th><th>허용일수</th><th>누적일수</th><th>잔여일수</th><th>상태</th></tr>
+      <tr><td>학생선수 A</td><td>20일</td><td>8일</td><td>12일</td><td><span class="bdg ok">여유</span></td></tr>
+      <tr><td>학생선수 B</td><td>20일</td><td>16일</td><td>4일</td><td><span class="bdg warn">주의</span></td></tr>
+      <tr><td>학생선수 C</td><td>20일</td><td>19일</td><td>1일</td><td><span class="bdg bad">임박</span></td></tr>
+    </table>
+  </div>
+  <div class="note2">※ 실제 학생 정보는 공개하지 않고, 가상 데이터로 구성한 화면입니다.</div>
+  <div class="links2">
+    <a class="btn" target="_blank" rel="noopener" href="https://docs.google.com/spreadsheets/d/1-qqVXk_pWkqwkn30xxIuuGjxx9JzAV5qrTeVEnINNAQ/edit?gid=0#gid=0">📊 실시간 출결 스프레드시트로 이동</a>
+  </div>
+  <div class="solve2" style="margin-top:auto"><b>✔ 개인별 허용일수·누적일수, 시트 하나로 실시간 확인</b></div>
+</section>
+
+<section class="slide">
+  <div class="crumb">업무</div>
+  <div class="htitle">기안문 작성부터 출결 확인까지</div>
+  <div class="duo" style="flex:none;margin-top:auto">
+    <div class="dc sm"><div class="ic">📄</div><div><h3>기안문 자동 생성</h3><p>반복 작성 업무 감소</p></div></div>
+    <div class="dc sm"><div class="ic">📊</div><div><h3>허용일수·누적일수 확인</h3><p>스프레드시트로 실시간 확인</p></div></div>
+  </div>
+  <div class="links2" style="margin-top:60px">
+    <a class="btn" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbxTsNzxA_PxNf-G1zqkAwcxa0zKZ6HiC5h4CkNogiH_uFvIL_JECaQn7KrwYLRDyFVO/exec">🗂️ 학생선수 출결 통합 관리 System 열기</a>
+    <a class="btn ghost" target="_blank" rel="noopener" href="https://docs.google.com/spreadsheets/d/1-qqVXk_pWkqwkn30xxIuuGjxx9JzAV5qrTeVEnINNAQ/edit?gid=0#gid=0">📊 실시간 출결 스프레드시트 열기</a>
+  </div>
+  <div class="solve2" style="margin-top:auto"><b>✔ 학생선수 출결 업무 해결</b></div>
+</section>
 
 <section class="slide s-end">
   <h1 id="thanks">감사합니다</h1>
@@ -998,7 +1171,7 @@ document.getElementById('bFull').onclick = toggleFull;
 document.getElementById('bSnd').onclick = e => { soundOn = !soundOn; e.currentTarget.textContent = soundOn ? '🔊' : '🔇'; };
 function toggleFull(){ if(!document.fullscreenElement) document.documentElement.requestFullscreen?.(); else document.exitFullscreen?.(); }
 addEventListener('keydown', e => {
-  if(e.target.tagName === 'SELECT') return;
+  if(['SELECT','INPUT','TEXTAREA'].includes(e.target.tagName)) return;
   if(ov.classList.contains('on')){ if(['Escape','o','O'].includes(e.key)) closeOv(); return; }
   if(e.key === 'o' || e.key === 'O'){ openOv(); return; }
   if(['ArrowRight','PageDown',' ','Enter'].includes(e.key)){ e.preventDefault(); next(); }
@@ -1165,6 +1338,33 @@ document.querySelectorAll('[data-zoom]').forEach(z => z.addEventListener('click'
 }));
 lb.addEventListener('click', () => lb.classList.remove('on'));
 addEventListener('keydown', e => { if(e.key === 'Escape') lb.classList.remove('on'); }, true);
+
+/* ---------- 02 평가: 채점 체험 ---------- */
+const gVals = [0,0,0];
+document.querySelectorAll('.gsc').forEach(box => {
+  const k = +box.dataset.k;
+  for(let n=1;n<=5;n++){
+    const b = document.createElement('button'); b.textContent = n;
+    b.onclick = () => {
+      gVals[k] = n;
+      [...box.children].forEach(c => c.classList.toggle('on', +c.textContent === n));
+      const t = document.getElementById('gradeTotal'); t.textContent = gVals.reduce((x,y)=>x+y,0) + ' / 15'; popEl(t); sfx.up();
+    };
+    box.appendChild(b);
+  }
+});
+
+/* ---------- 03 업무: 기안문 예시 생성 ---------- */
+document.getElementById('dBtn').onclick = () => {
+  const st = document.getElementById('dStudent').value, ty = document.getElementById('dType').value, d = document.getElementById('dDate').value || '____-__-__';
+  const out = document.getElementById('dOut');
+  out.textContent = '제목: 학생선수 '+ty+'에 따른 출석 인정 요청\n\n'+
+    '1. 관련: 학생선수 관리 계획\n'+
+    '2. 아래 학생선수의 '+ty+'과 관련하여 출석 인정을 요청합니다.\n\n'+
+    '  - 대상: '+st+'\n  - 일시: '+d+'\n  - 구분: '+ty+'\n\n'+
+    '붙임: 관련 증빙 1부.  끝.';
+  popEl(out); sfx.win();
+};
 
 /* ---------- summary & end ---------- */
 document.getElementById('thanks').addEventListener('click', () => { confetti(80); sfx.win(); });
